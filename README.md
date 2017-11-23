@@ -16,6 +16,16 @@ This repository, I introduce two mode in oslo_messaing.
 1. RPC mode
 2. Notification mode: This mode is based on rabbitmq
 
+## Expand
+
+If the server want to listen a queue not in localhost.
+We shoud add the 'rabbit url' on transport. Just lik the following code.
+
+```python
+self.transport = oslo_messaging.get_notification_transport(cfg.CONF,
+url="rabbit://RABBIT_USER:RABBIT_PASS@rabbit1:5672")
+```
+
 ## Reference:
 
 - [oslo_messaging](http://docs.openstack.org/developer/oslo.messaging/)
